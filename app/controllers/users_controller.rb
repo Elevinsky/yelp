@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @ownership = Ownership.new
+    @review = Review.new
     @user = User.find(params[:id])
 
     render("users/show.html.erb")
