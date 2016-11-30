@@ -41,3 +41,96 @@
     </div>
   </div>
 </div>
+
+<!-- A Restaurant has many restaurant_tags -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Restaurant_tags
+      </li>
+
+      <% @restaurant.restaurant_tags.each do |restaurant_tag| %>
+        <li class="list-group-item">
+          <a href="/restaurant_tags/<%= restaurant_tag.id %>">
+            <%= restaurant_tag.restaurant_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/restaurant_tags/<%= restaurant_tag.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/restaurant_tags/<%= restaurant_tag.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_restaurant_tag/<%= restaurant_tag.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Restaurant has many reviews -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Reviews
+      </li>
+
+      <% @restaurant.reviews.each do |review| %>
+        <li class="list-group-item">
+          <a href="/reviews/<%= review.id %>">
+            <%= review.user_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/reviews/<%= review.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/reviews/<%= review.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_review/<%= review.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Restaurant has many ownerships -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Ownerships
+      </li>
+
+      <% @restaurant.ownerships.each do |ownership| %>
+        <li class="list-group-item">
+          <a href="/ownerships/<%= ownership.id %>">
+            <%= ownership.user_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/ownerships/<%= ownership.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/ownerships/<%= ownership.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_ownership/<%= ownership.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
