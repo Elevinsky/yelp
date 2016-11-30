@@ -24,7 +24,13 @@
       <dd><%= @restaurant.cover_photo %></dd>
 
       <dt>Location</dt>
-      <dd><%= @restaurant.location_id %></dd>
+      <dd>
+        <% if @restaurant.location.present? %>
+          <a href="/locations/<%= @restaurant.location_id %>">
+            <%= @restaurant.location.neighborhood %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
